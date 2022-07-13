@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .community-icon-bg {
+    @apply bg-communityIconBg bg-no-repeat bg-cover p-8;
+  }
+  .community-icon {
+    @apply p-2 rounded-full text-4xl;
+  }
+}

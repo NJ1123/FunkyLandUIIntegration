@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .landing {
+    @apply bg-bgPrimary
+    /* background: linear-gradient(
+      180deg,
+      #def4fd 0%,
+      #9ed5ea 18.18%,
+      #6ec9ec 45.45%,
+      #4facd4 91.86%
+    ); */;
+  }
+}

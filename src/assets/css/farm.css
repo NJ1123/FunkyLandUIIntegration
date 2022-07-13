@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .farm {
+    @apply bg-[#56C0EE];
+  }
+}
