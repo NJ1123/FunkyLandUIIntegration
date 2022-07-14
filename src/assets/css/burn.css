@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .burn-nft-collection {
+    @apply grid grid-cols-5 gap-2 mx-auto;
+  }
+  .burn-nft {
+    @apply bg-[#363535] rounded-2xl outline outline-offset-2 outline-0 hover:outline-1 active:outline-4;
+  }
+
+  .burn-nft-active {
+    @apply bg-[#363535] rounded-2xl outline outline-offset-2 outline-4;
+  }
+}

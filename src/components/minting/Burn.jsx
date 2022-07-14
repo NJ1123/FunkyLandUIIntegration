@@ -1,8 +1,12 @@
-import React from "react";
-import CountField from "./CountField";
+import React, { useEffect, useState } from "react";
 import config from "../../config/config.json";
 import BigNumber from "bignumber.js";
-import { sendTransactions } from "@elrondnetwork/dapp-core";
+import {
+  sendTransactions,
+  transactionServices,
+} from "@elrondnetwork/dapp-core";
+import axios from "axios";
+import "../../assets/css/burn.css";
 
 import {
   SmartContract,
@@ -26,13 +30,17 @@ function Burn(props) {
   const { setMinting } = props;
   const handleBurn = async () => {
     const token_identifier = "4255524E4E46542D633135663334";
-    const nonce = "02";
+    const nonce =
+      selectedNft.nonce.toString(16).length % 2 === 0
+        ? selectedNft.nonce.toString(16)
+        : `${"0" + selectedNft.nonce.toString(16)}`;
+    console.log(nonce);
     const quantity = "01";
     const destination =
       "00000000000000000500f41d383cef1ffd9225320b6d20179940ee17ddd9fa10";
     const name = "6275726E47656E5A65726F46756E6B696573";
     const first_arg = token_identifier;
-    const second_arg = "02";
+    const second_arg = nonce;
     const Data =
       "ESDTNFTTransfer" +
       "@" +
@@ -85,7 +93,7 @@ function Burn(props) {
     const callTransactionOne = new Transaction({
       receiver: new Address(wallet.address),
       gasLimit: new GasLimit(100000000),
-      value:  Balance.fromString(0),
+      value: Balance.fromString(0),
       data: new TransactionPayload(Data),
     });
     // console.log("callTransaction", callTransactionOne);
@@ -113,14 +121,33 @@ function Burn(props) {
     const { sessionId, error } = sendTransactions({
       transactions: callTransactionOne,
     });
-
+    const transactionStatus = transactionServices.useTrackTransactionStatus({
+      transactionId: sessionId,
+      onSuccess: (sessionId) => {
+        console.log("success");
+      },
+    });
     console.log("error", error);
+    console.log("transactionStatus", transactionStatus);
     console.log("sessionId", sessionId);
 
     console.log("mintingcontract", config.mintingContract);
 
     setMinting(true);
   };
+  const [userNfts, setUserNfts] = useState([]);
+  const [selectedNft, setSelectedNft] = useState({});
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://devnet-api.elrond.com/accounts/erd18vhfjrltkpsedfr8pyj4yep8ekcd25gnvkj4e5hx4qsxdttxvsrs6n7jsv/nfts?collections=BURNNFT-c15f34"
+      )
+      .then((response) => {
+        setUserNfts(response.data);
+        console.log("response", response.data);
+      });
+  }, []);
   return (
     <>
       <div className="py-6 md:py-12">
@@ -132,20 +159,51 @@ function Burn(props) {
             <div className="text-center font-inika text-[#DFFF1A] text-2xl mt-3 ">
               Burn and Get New Funkies
             </div>
-            <div className="text-center font-inika text-[#DFFF1A] text-3xl my-8">
-              Select Quantity
-            </div>
+            <div className="flex mt-10">
+              <div className=" w-1/2 ">
+                <div className="burn-nft-collection">
+                  {userNfts.map((userNft, index) => {
+                    return (
+                      <div
+                        className={
+                          selectedNft && selectedNft.nonce === userNft.nonce
+                            ? "burn-nft-active"
+                            : "burn-nft"
+                        }
+                        key={index}
+                      >
+                        <img
+                          src={userNft.media[0].url}
+                          alt={userNft.nonce}
+                          className="w-full"
+                          onClick={() => {
+                            setSelectedNft(userNft);
+                            console.log(
+                              typeof userNft.nonce,
+                              userNft.nonce.toString(16)
+                            );
+                            const nonce =
+                              userNft.nonce.toString(16).length % 2 === 0
+                                ? userNft.nonce.toString(16)
+                                : ` ${"0" + userNft.nonce.toString(16)}`;
+                            console.log("nonce", nonce);
+                          }}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
 
-            <div className="my-10">
-              <CountField />
+              <div className="w-1/2">
+                <button
+                  className="connect-btn flex justify-center px-16 mt-10"
+                  onClick={handleBurn}
+                >
+                  Burn
+                </button>
+              </div>
             </div>
-
-            <button
-              className="connect-btn flex justify-center px-16"
-              onClick={handleBurn}
-            >
-              Burn
-            </button>
           </div>
         </div>
       </div>

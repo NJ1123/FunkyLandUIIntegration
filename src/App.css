@@ -9,6 +9,10 @@
   body {
     @apply bg-[#0A626D];
   }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
   .section {
     @apply md:max-w-6xl mx-auto text-center;
   }

@@ -5,13 +5,14 @@ import { DappUI } from "@elrondnetwork/dapp-core";
 import { useWallet } from "../../hooks/useWallet";
 
 function ConnectBtn() {
-  const [popupOpen, setPopupOpen] = useState(true);
+  const [popupOpen, setPopupOpen] = useState(false);
   const btnRef = useRef();
   const popupRef = useRef();
   const { wallet, handleLogout, trimWallet } = useWallet();
 
   const handleClose = () => {
     setPopupOpen(false);
+    document.body.removeEventListener("click", handleOutsideClick);
   };
   const handleOpen = () => {
     setPopupOpen(true);
@@ -22,18 +23,19 @@ function ConnectBtn() {
     LedgerLoginButton,
     WalletConnectLoginButton,
   } = DappUI;
-
+  const handleOutsideClick = (e) => {
+    console.log(e, e.path.includes(popupRef.current));
+    if (e.path[0] !== btnRef.current && !e.path.includes(popupRef.current)) {
+      handleClose();
+    }
+  };
   useEffect(() => {
-    const handleOutsideClick = (e) => {
-      console.log(e, e.path.includes(popupRef.current));
-      if (e.path[0] !== btnRef.current && !e.path.includes(popupRef.current)) {
-        handleClose();
-      }
-    };
-    document.body.addEventListener("click", handleOutsideClick);
+    if (popupOpen) {
+      document.body.addEventListener("click", handleOutsideClick);
+    }
 
     return () => document.body.removeEventListener("click", handleOutsideClick);
-  }, []);
+  }, [popupOpen]);
 
   return (
     <>
