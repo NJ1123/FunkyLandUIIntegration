@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { funkyNinja } from "../../assets/images/images";
-import CountField from "./CountField";
 import config from "../../config/config.json";
 import { sendTransactions } from "@elrondnetwork/dapp-core";
+import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
+
 import {
   SmartContract,
   Address,
@@ -16,7 +17,14 @@ import {
 function Mint(props) {
   const [mintCount, setMintCount] = useState(1);
 
-  const { minting, setMinting } = props;
+  // const { minting, setMinting } = props;
+  const decrement = () => {
+    if (mintCount > 1) setMintCount((prevState) => prevState - 1);
+  };
+
+  const increment = () => {
+    setMintCount((prevState) => prevState + 1);
+  };
 
   const handleMint = async () => {
     const contract = new SmartContract({
@@ -56,7 +64,19 @@ function Mint(props) {
                 Select Quantity
               </div>
               <div className="my-10">
-                <CountField mintCount={mintCount} setMinting={setMinting} />
+                <div className="counter">
+                  <div className=" flex items-center text-2xl justify-center">
+                    <button className="decrement" onClick={decrement}>
+                      <AiOutlineMinusCircle />
+                    </button>
+                    <div className="count px-16 py-3  bg-gradient-to-b from-[#6DA384] to-[#7ABCA3] rounded-3xl mx-5 text-white">
+                      {mintCount}
+                    </div>
+                    <button className="increment" onClick={increment}>
+                      <AiOutlinePlusCircle />
+                    </button>
+                  </div>
+                </div>
                 <div className="text-center font-inika text-[#622F00] text-lg">
                   Total Cost: 0.5 EGLD
                 </div>
