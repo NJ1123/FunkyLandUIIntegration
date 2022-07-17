@@ -107,12 +107,12 @@ function ConnectBtn() {
                     />
                     <ExtensionLoginButton
                       buttonClassName="connect__button"
-                      callbackRoute="/app/minting"
+                      callbackRoute={window.location.pathname}
                       wrapContentInsideModal
                       loginButtonText={"Extension"}
                     />
                     <WalletConnectLoginButton
-                      callbackRoute="/app/minting"
+                      callbackRoute={window.location.pathname}
                       loginButtonText={"Maiar App"}
                       wrapContentInsideModal
                       buttonClassName="connect__button"
@@ -120,7 +120,7 @@ function ConnectBtn() {
                     <LedgerLoginButton
                       buttonClassName="connect__button"
                       loginButtonText={"Ledger"}
-                      callbackRoute="/app/minting"
+                      callbackRoute={window.location.pathname}
                       wrapContentInsideModal
                       className={"test-class_name"}
                     />
