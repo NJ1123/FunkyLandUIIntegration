@@ -17,6 +17,7 @@ function ConnectBtn() {
   const handleOpen = () => {
     setPopupOpen(true);
   };
+
   const {
     ExtensionLoginButton,
     WebWalletLoginButton,
@@ -29,6 +30,7 @@ function ConnectBtn() {
       handleClose();
     }
   };
+
   useEffect(() => {
     if (popupOpen) {
       document.body.addEventListener("click", handleOutsideClick);
@@ -99,7 +101,7 @@ function ConnectBtn() {
                   <div className="pt-10 flex flex-col gap-y-5">
                     <WebWalletLoginButton
                       buttonClassName="connect__button"
-                      callbackRoute="/app/minting"
+                      callbackRoute={window.location.pathname}
                       wrapContentInsideModal
                       loginButtonText={"Web Wallet"}
                     />

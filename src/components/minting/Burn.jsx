@@ -96,6 +96,7 @@ function Burn(props) {
       value: Balance.fromString(0),
       data: new TransactionPayload(Data),
     });
+
     // console.log("callTransaction", callTransactionOne);
     // const contract = new SmartContract({
     //   address: new Address(config.mintingContract),
@@ -139,15 +140,17 @@ function Burn(props) {
   const [selectedNft, setSelectedNft] = useState({});
 
   useEffect(() => {
-    axios
-      .get(
-        "https://devnet-api.elrond.com/accounts/erd18vhfjrltkpsedfr8pyj4yep8ekcd25gnvkj4e5hx4qsxdttxvsrs6n7jsv/nfts?collections=BURNNFT-c15f34"
-      )
-      .then((response) => {
-        setUserNfts(response.data);
-        console.log("response", response.data);
-      });
-  }, []);
+    if (wallet.connected) {
+      axios
+        .get(
+          `https://devnet-api.elrond.com/accounts/${wallet.address}/nfts?collections=BURNNFT-c15f34`
+        )
+        .then((response) => {
+          setUserNfts(response.data);
+          console.log("response", response.data);
+        });
+    }
+  }, [wallet]);
   return (
     <>
       <div className="py-6 md:py-12">
