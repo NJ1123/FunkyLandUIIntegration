@@ -31,13 +31,17 @@ function ConnectBtn() {
     }
   };
 
-  useEffect(() => {
-    if (popupOpen) {
-      document.body.addEventListener("click", handleOutsideClick);
-    }
+  useEffect(
+    (handleOutsideClick) => {
+      if (popupOpen) {
+        document.body.addEventListener("click", handleOutsideClick);
+      }
 
-    return () => document.body.removeEventListener("click", handleOutsideClick);
-  }, [popupOpen]);
+      return () =>
+        document.body.removeEventListener("click", handleOutsideClick);
+    },
+    [popupOpen]
+  );
 
   return (
     <>
@@ -46,7 +50,8 @@ function ConnectBtn() {
         className="connect-btn flex justify-center "
         onClick={!wallet.connected ? handleOpen : handleLogout}
       >
-        {!wallet.connected ? "Connect Wallet" : wallet.address}
+        {/* TODO - Add Hero Tag */}
+        {!wallet.connected ? "Connect Wallet" : trimWallet(wallet.address)}
       </button>
       {popupOpen && (
         <>

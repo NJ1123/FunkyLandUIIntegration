@@ -15,9 +15,9 @@ export const useWallet = () => {
   const handleLogout = () => logout(`${window.location.pathname}`);
   const trimWallet = (wallet) =>
     wallet &&
-    `${String(wallet).substr(0, 5)}
+    `${String(wallet).substr(0, 6)}
       ...
-      ${String(wallet).substr(wallet.length - 5, wallet.length - 1)}`;
+      ${String(wallet).substr(wallet.length - 6, wallet.length - 1)}`;
   const trimWalletLarge = (wallet) =>
     wallet &&
     `${String(wallet).substr(0, 12)}
