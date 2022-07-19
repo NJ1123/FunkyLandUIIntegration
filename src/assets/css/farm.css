@@ -6,4 +6,13 @@
   .farm {
     @apply bg-[#56C0EE];
   }
+  .tab-bg {
+    background: linear-gradient(
+      90.06deg,
+      #074c55 -2.46%,
+      rgba(23, 59, 64, 0.458333) 69.72%,
+      rgba(1, 12, 14, 0) 134%
+    );
+    border: 1px solid #01fed1;
+  }
 }

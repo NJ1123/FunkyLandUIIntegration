@@ -3469,7 +3469,7 @@ a > .dapp-core-ui-wrapper code {
   min-height: 1.5rem;
   padding-left: 1.5rem;
   -webkit-print-color-adjust: exact;
-  color-adjust: exact;
+  print-color-adjust: exact;
 }
 .dapp-core-ui-wrapper .custom-control-inline {
   display: inline-flex;
