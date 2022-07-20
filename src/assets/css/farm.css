@@ -4,7 +4,12 @@
 
 @layer components {
   .farm {
-    @apply bg-[#56C0EE];
+    background: url("../images/fl-blur-bg1.png"),
+      linear-gradient(180deg, #085e69 0%, #000707 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   .tab-bg {
     background: linear-gradient(
@@ -13,6 +18,27 @@
       rgba(23, 59, 64, 0.458333) 69.72%,
       rgba(1, 12, 14, 0) 134%
     );
+  }
+  .tab-border {
     border: 1px solid #01fed1;
+  }
+  .stat-box {
+    @apply p-2 tab-border space-y-2;
+  }
+
+  .stat-box:first-child {
+    border-top-left-radius: 1rem;
+  }
+  .stat-box:last-child {
+    border-top-right-radius: 1rem;
+  }
+  .funky-card-group {
+    @apply tab-border py-10 rounded-b-2xl;
+  }
+  .funkies-card {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 10px 10px 10px;
+    border: 2px solid;
+    border-color: linear-gradient(rgba(219, 255, 0, 1), rgba(0, 255, 25, 0.4));
   }
 }
