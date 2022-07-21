@@ -28,6 +28,8 @@ import { useWallet } from "../../hooks/useWallet";
 function Burn(props) {
   const { wallet, handleLogout, trimWallet } = useWallet();
   const { setMinting } = props;
+  const activeTransactionStatus = transactionServices.useGetActiveTransactionsStatus();
+
   const handleBurn = async () => {
     const token_identifier = "4255524E4E46542D633135663334";
     const nonce =
@@ -122,14 +124,8 @@ function Burn(props) {
     const { sessionId, error } = sendTransactions({
       transactions: callTransactionOne,
     });
-    const transactionStatus = transactionServices.useTrackTransactionStatus({
-      transactionId: sessionId,
-      onSuccess: (sessionId) => {
-        console.log("success");
-      },
-    });
+
     console.log("error", error);
-    console.log("transactionStatus", transactionStatus);
     console.log("sessionId", sessionId);
 
     console.log("mintingcontract", config.mintingContract);
@@ -147,7 +143,7 @@ function Burn(props) {
         )
         .then((response) => {
           setUserNfts(response.data);
-          console.log("response", response.data);
+          // console.log("response", response.data);
         });
     }
   }, [wallet]);
@@ -200,7 +196,10 @@ function Burn(props) {
 
               <div className="w-1/2">
                 <button
-                  className="connect-btn flex justify-center px-16 mt-10"
+                  className={`connect-btn flex justify-center px-16 mt-10 ${
+                    activeTransactionStatus.pending ? "" : "cursor-not-allowed"
+                  }`}
+                  disabled={activeTransactionStatus.pending}
                   onClick={handleBurn}
                 >
                   Burn
