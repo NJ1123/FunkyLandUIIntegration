@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
+const MINT_LIMIT = 10;
 
 function CountField(props) {
   // const [mintCount, setMintCount] = useState(1);
@@ -10,7 +11,7 @@ function CountField(props) {
   };
 
   const increment = () => {
-    setMintCount((prevState) => prevState + 1);
+    if (mintCount < MINT_LIMIT) setMintCount((prevState) => prevState + 1);
   };
   return (
     <div className="counter">

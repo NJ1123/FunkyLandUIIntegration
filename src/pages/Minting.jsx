@@ -7,11 +7,38 @@ import Burn from "../components/minting/Burn";
 import Gallery from "../components/common/Gallery";
 import Community from "../components/common/Community";
 import MintLoading from "../components/minting/MintLoading";
+import { transactionServices } from "@elrondnetwork/dapp-core";
 
 function Minting() {
   const [minting, setMinting] = useState(false);
+  const successfulTransaction = transactionServices.useGetSuccessfulTransactions();
+  const unsuccessfulTransaction = transactionServices.useGetFailedTransactions();
+  const pendingTransaction = transactionServices.useGetPendingTransactions();
+  const activeTransaction = transactionServices.useGetActiveTransactionsStatus();
+  const transactionStatus = transactionServices.useTrackTransactionStatus({
+    transactionId: null,
+    onSuccess: () => {
+      console.log("success");
+    },
+    onFail: () => {
+      console.log("onFail");
+    },
+    onCancelled: () => {
+      console.log("onCancelled");
+    },
+    onCompleted: () => {
+      console.log("onCompleted");
+    },
+  });
+
   return (
     <>
+      {console.log("successfulTransaction", successfulTransaction)}
+      {console.log("transactionStatus", transactionStatus)}
+      {console.log("pendingTransaction", pendingTransaction)}
+      {console.log("unsuccessfulTransaction", unsuccessfulTransaction)}
+      {console.log("activeTransaction", activeTransaction)}
+
       <div className="minting">
         <Navbar />
         <div className="section" id="funkies">
