@@ -21,7 +21,7 @@ function Gallery(props) {
         )
         .then((response) => {
           setUserNfts(response.data);
-          console.log("response", response.data);
+          // console.log("response", response.data);
         });
     }
   }, [wallet]);
@@ -29,7 +29,7 @@ function Gallery(props) {
     <>
       <div className="section">
         <div className="section-title">{title}</div>
-        <div className="flex flex-wrap content-start justify-evenly gap-x-2 gap-y-8 my-6 md:justify-between md:gap-x-10 md:gap-y-16 md:my-20 md:mx-16">
+        <div className="grid grid-cols-4 md:gap-x-8 md:gap-y-10 md:my-20 md:mx-16">
           {userNfts.map((userNft, index) => (
             <div key={index}>
               <img
