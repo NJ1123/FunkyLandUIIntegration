@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { funkyNinja } from "../../assets/images/images";
 import config from "../../config/config.json";
-import { sendTransactions } from "@elrondnetwork/dapp-core";
+import {
+  sendTransactions,
+  transactionServices,
+} from "@elrondnetwork/dapp-core";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 
 import {
@@ -14,8 +17,12 @@ import {
   Balance,
 } from "@elrondnetwork/erdjs";
 
+const MINT_LIMIT = 10;
+const MINT_COST = 0.5;
+
 function Mint(props) {
   const [mintCount, setMintCount] = useState(1);
+  const activeTransactionStatus = transactionServices.useGetActiveTransactionsStatus();
 
   // const { minting, setMinting } = props;
   const decrement = () => {
@@ -23,7 +30,7 @@ function Mint(props) {
   };
 
   const increment = () => {
-    setMintCount((prevState) => prevState + 1);
+    if (mintCount < MINT_LIMIT) setMintCount((prevState) => prevState + 1);
   };
 
   const handleMint = async () => {
@@ -78,12 +85,15 @@ function Mint(props) {
                   </div>
                 </div>
                 <div className="text-center font-inika text-[#622F00] text-lg">
-                  Total Cost: 0.5 EGLD
+                  Total Cost: {MINT_COST * mintCount} EGLD
                 </div>
               </div>
 
               <button
-                className="connect-btn flex justify-center px-16 "
+                className={`connect-btn flex justify-center px-16 ${
+                  activeTransactionStatus.pending ? "" : "cursor-not-allowed"
+                }`}
+                disabled={activeTransactionStatus.pending}
                 onClick={handleMint}
               >
                 Mint
