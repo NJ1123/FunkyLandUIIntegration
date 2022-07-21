@@ -197,7 +197,7 @@ function Burn(props) {
               <div className="w-1/2">
                 <button
                   className={`connect-btn flex justify-center px-16 mt-10 ${
-                    activeTransactionStatus.pending ? "" : "cursor-not-allowed"
+                    activeTransactionStatus.pending ? "cursor-not-allowed" : ""
                   }`}
                   disabled={activeTransactionStatus.pending}
                   onClick={handleBurn}

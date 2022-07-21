@@ -91,7 +91,7 @@ function Mint(props) {
 
               <button
                 className={`connect-btn flex justify-center px-16 ${
-                  activeTransactionStatus.pending ? "" : "cursor-not-allowed"
+                  activeTransactionStatus.pending ? "cursor-not-allowed" : ""
                 }`}
                 disabled={activeTransactionStatus.pending}
                 onClick={handleMint}
