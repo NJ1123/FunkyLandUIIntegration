@@ -4,7 +4,7 @@
 
 @layer components {
   .landing {
-    @apply bg-bgPrimary
+    @apply bg-bgPrimary text-white
     /* background: linear-gradient(
       180deg,
       #def4fd 0%,

@@ -39,7 +39,6 @@ function Landing() {
           <Roadmap />
           <LearnMore />
           <Community />
-          <Footer />
         </div>
       </div>
     </div>

@@ -5,16 +5,18 @@ import { Link } from "react-router-dom";
 
 function Banner() {
   return (
-    <div
-      className="banner flex flex-col mx-auto max-w-xl h-screen  flex items-center"
-      id="home"
-    >
-      <img src={bannerImg} alt="" className="my-14" />
-      <Link to="/app/minting">
-        <button className="banner-btn flex justify-center">
-          Enter Funkyland
-        </button>
-      </Link>
+    <div className="banner">
+      <div
+        className="flex flex-col mx-auto max-w-xl items-center py-14"
+        id="home"
+      >
+        <img src={bannerImg} alt="" className="my-14" />
+        <Link to="/app/minting">
+          <button className="banner-btn flex justify-center">
+            Enter Funkyland
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
