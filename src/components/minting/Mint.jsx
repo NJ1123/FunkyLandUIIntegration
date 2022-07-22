@@ -16,6 +16,8 @@ import {
   U32Value,
   Balance,
 } from "@elrondnetwork/erdjs";
+import { useWallet } from "../../hooks/useWallet";
+import ConnectBtn from "../common/ConnectBtn";
 
 const MINT_LIMIT = 10;
 const MINT_COST = 0.5;
@@ -23,7 +25,7 @@ const MINT_COST = 0.5;
 function Mint(props) {
   const [mintCount, setMintCount] = useState(1);
   const activeTransactionStatus = transactionServices.useGetActiveTransactionsStatus();
-
+  const { wallet } = useWallet();
   // const { minting, setMinting } = props;
   const decrement = () => {
     if (mintCount > 1) setMintCount((prevState) => prevState - 1);
@@ -88,16 +90,25 @@ function Mint(props) {
                   Total Cost: {MINT_COST * mintCount} EGLD
                 </div>
               </div>
-
-              <button
-                className={`connect-btn flex justify-center px-16 ${
-                  activeTransactionStatus.pending ? "cursor-not-allowed" : ""
-                }`}
-                disabled={activeTransactionStatus.pending}
-                onClick={handleMint}
-              >
-                Mint
-              </button>
+              {wallet.connected ? (
+                <>
+                  <button
+                    className={`connect-btn flex justify-center px-16 ${
+                      activeTransactionStatus.pending
+                        ? "cursor-not-allowed"
+                        : ""
+                    }`}
+                    disabled={activeTransactionStatus.pending}
+                    onClick={handleMint}
+                  >
+                    Mint
+                  </button>
+                </>
+              ) : (
+                <>
+                  <ConnectBtn />
+                </>
+              )}
             </div>
           </div>
 
