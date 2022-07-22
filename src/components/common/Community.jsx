@@ -16,19 +16,37 @@ function Community() {
           </p>
           <div className="flex justify-center md:gap-20 pb-20">
             <div className="community-icon-bg">
-              <div className="community-icon bg-[#7289da]">
-                <FaDiscord />
-              </div>
+              <a
+                href="https://discord.com/invite/TmBfK7FuGz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="community-icon bg-[#7289da]">
+                  <FaDiscord />
+                </div>
+              </a>
             </div>
             <div className="community-icon-bg">
-              <div className="community-icon bg-[#229ED9]">
-                <FaTelegramPlane />
-              </div>
+              <a
+                href="https://t.me/FunkyEggsOfficial"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="community-icon bg-[#229ED9]">
+                  <FaTelegramPlane />
+                </div>
+              </a>
             </div>
             <div className="community-icon-bg">
-              <div className="community-icon bg-[#1DA1F2]">
-                <FaTwitter />
-              </div>
+              <a
+                href="https://twitter.com/funkymetaverse"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="community-icon bg-[#1DA1F2]">
+                  <FaTwitter />
+                </div>
+              </a>
             </div>
           </div>
         </div>
