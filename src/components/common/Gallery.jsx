@@ -29,18 +29,26 @@ function Gallery(props) {
     <>
       <div className="section">
         <div className="section-title">{title}</div>
-        <div className="grid grid-cols-4 md:gap-x-8 md:gap-y-10 md:my-20 md:mx-16">
-          {userNfts.map((userNft, index) => (
-            <div key={index}>
-              <img
-                src={funkyNinjaGallery}
-                alt="Gallery-Img"
-                className="md:w-max w-1/3 md:h-auto"
-                onClick={handleFunkyClick}
-              />
+        {userNfts.length === 0 ? (
+          <>
+            <div className="section-empty">No NFTs Found</div>
+          </>
+        ) : (
+          <>
+            <div className="grid grid-cols-4 md:gap-x-8 md:gap-y-10 md:my-20 md:mx-16">
+              {userNfts.map((userNft, index) => (
+                <div key={index}>
+                  <img
+                    src={funkyNinjaGallery}
+                    alt="Gallery-Img"
+                    className="md:w-max w-1/3 md:h-auto"
+                    onClick={handleFunkyClick}
+                  />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+        )}
       </div>
       {popupOpen && (
         <FunkyPopup popupOpen={popupOpen} setPopupOpen={setPopupOpen} />

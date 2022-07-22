@@ -149,66 +149,72 @@ function Burn(props) {
   }, [wallet]);
   return (
     <>
-      <div className="py-6 md:py-12">
-        <div className="w-full bg-[#34A0AE]  max-w-6xl mx-auto rounded-2xl p-6">
-          <div className="bg-[#337A83] rounded-2xl p-6">
-            <div className="text-center section-title text-5xl">
-              Burn Funky Eggs
-            </div>
-            <div className="text-center font-inika text-[#DFFF1A] text-2xl mt-3 ">
-              Burn and Get New Funkies
-            </div>
-            <div className="flex mt-10">
-              <div className=" w-1/2 ">
-                <div className="burn-nft-collection">
-                  {userNfts.map((userNft, index) => {
-                    return (
-                      <div
-                        className={
-                          selectedNft && selectedNft.nonce === userNft.nonce
-                            ? "burn-nft-active"
-                            : "burn-nft"
-                        }
-                        key={index}
-                      >
-                        <img
-                          src={userNft.media[0].url}
-                          alt={userNft.nonce}
-                          className="w-full"
-                          onClick={() => {
-                            setSelectedNft(userNft);
-                            console.log(
-                              typeof userNft.nonce,
-                              userNft.nonce.toString(16)
-                            );
-                            const nonce =
-                              userNft.nonce.toString(16).length % 2 === 0
-                                ? userNft.nonce.toString(16)
-                                : ` ${"0" + userNft.nonce.toString(16)}`;
-                            console.log("nonce", nonce);
-                          }}
-                        />
-                      </div>
-                    );
-                  })}
+      {userNfts.length !== 0 && (
+        <>
+          <div className="py-6 md:py-12">
+            <div className="w-full bg-[#34A0AE]  max-w-6xl mx-auto rounded-2xl p-6">
+              <div className="bg-[#337A83] rounded-2xl p-6">
+                <div className="text-center section-title text-5xl">
+                  Burn Funky Eggs
                 </div>
-              </div>
+                <div className="text-center font-inika text-[#DFFF1A] text-2xl mt-3 ">
+                  Burn and Get New Funkies
+                </div>
+                <div className="flex mt-10">
+                  <div className=" w-1/2 ">
+                    <div className="burn-nft-collection">
+                      {userNfts.map((userNft, index) => {
+                        return (
+                          <div
+                            className={
+                              selectedNft && selectedNft.nonce === userNft.nonce
+                                ? "burn-nft-active"
+                                : "burn-nft"
+                            }
+                            key={index}
+                          >
+                            <img
+                              src={userNft.media[0].url}
+                              alt={userNft.nonce}
+                              className="w-full"
+                              onClick={() => {
+                                setSelectedNft(userNft);
+                                console.log(
+                                  typeof userNft.nonce,
+                                  userNft.nonce.toString(16)
+                                );
+                                const nonce =
+                                  userNft.nonce.toString(16).length % 2 === 0
+                                    ? userNft.nonce.toString(16)
+                                    : ` ${"0" + userNft.nonce.toString(16)}`;
+                                console.log("nonce", nonce);
+                              }}
+                            />
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
 
-              <div className="w-1/2">
-                <button
-                  className={`connect-btn flex justify-center px-16 mt-10 ${
-                    activeTransactionStatus.pending ? "cursor-not-allowed" : ""
-                  }`}
-                  disabled={activeTransactionStatus.pending}
-                  onClick={handleBurn}
-                >
-                  Burn
-                </button>
+                  <div className="w-1/2">
+                    <button
+                      className={`connect-btn flex justify-center px-16 mt-10 ${
+                        activeTransactionStatus.pending
+                          ? "cursor-not-allowed"
+                          : ""
+                      }`}
+                      disabled={activeTransactionStatus.pending}
+                      onClick={handleBurn}
+                    >
+                      Burn
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </>
   );
 }
