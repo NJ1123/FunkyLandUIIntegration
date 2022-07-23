@@ -23,7 +23,7 @@
     border: 1px solid #01fed1;
   }
   .stat-box {
-    @apply p-2 tab-border space-y-2;
+    @apply p-2 tab-border space-y-3 py-5;
   }
 
   .stat-box:first-child {
@@ -40,5 +40,8 @@
     border-radius: 0px 10px 10px 10px;
     border: 2px solid;
     border-color: linear-gradient(rgba(219, 255, 0, 1), rgba(0, 255, 25, 0.4));
+  }
+  .progress-bar {
+    box-shadow: inset 0px 4px 4px rgba(255, 242, 242, 0.25);
   }
 }

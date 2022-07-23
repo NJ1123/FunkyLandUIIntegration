@@ -1,5 +1,5 @@
 import React from "react";
-import { bullCard } from "../../assets/images/images";
+import ClaimAmount from "./ClaimAmount";
 import FunkyCard from "./FunkyCard";
 import Stats from "./Stats";
 
@@ -8,12 +8,17 @@ function FarmTab() {
     <div>
       <div>
         <Stats />
-
-        <div className="grid grid-cols-4 funky-card-group">
-          <FunkyCard />
-          <FunkyCard />
-          <FunkyCard />
-          <FunkyCard />
+        <div className="funky-card-group px-5">
+          <ClaimAmount />
+          <div className="grid grid-cols-4 gap-10 mt-10">
+            <FunkyCard type="farm" />
+            <FunkyCard type="farm" />
+            <FunkyCard type="farm" />
+            <FunkyCard type="farm" />
+            <FunkyCard type="farm" />
+            <FunkyCard type="farm" />
+            <FunkyCard type="farm" />
+          </div>
         </div>
       </div>
     </div>

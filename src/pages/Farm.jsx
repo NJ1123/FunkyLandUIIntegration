@@ -5,6 +5,7 @@ import ConnectBtn from "../components/common/ConnectBtn";
 import LiveUpdatesbar from "../components/liveUpdates/LiveUpdatesbar";
 import { Tab } from "@headlessui/react";
 import FarmTab from "../components/farm/FarmTab";
+import BarnTab from "../components/farm/BarnTab";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -55,7 +56,9 @@ function Farm() {
               <Tab.Panel className={tabPanelClasses}>
                 <FarmTab />
               </Tab.Panel>
-              <Tab.Panel className={tabPanelClasses}>Content 2</Tab.Panel>
+              <Tab.Panel className={tabPanelClasses}>
+                <BarnTab />
+              </Tab.Panel>
               <Tab.Panel className={tabPanelClasses}>Content 3</Tab.Panel>
               <Tab.Panel className={tabPanelClasses}>Content 4</Tab.Panel>
               <Tab.Panel className={tabPanelClasses}>Content 5</Tab.Panel>
