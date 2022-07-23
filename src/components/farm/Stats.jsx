@@ -11,7 +11,7 @@ function Stats() {
         </div>
         <div className="stat-box ">
           <h1>In Farm</h1>
-          <div className="grid grid-cols-2">
+          <div className="grid md:grid-cols-2">
             <p className="flex justify-around items-center">
               5
               <span>
@@ -28,7 +28,7 @@ function Stats() {
         </div>
         <div className="stat-box ">
           <h1>At Barn</h1>
-          <div className="grid grid-cols-2">
+          <div className="grid md:grid-cols-2">
             <p className="flex justify-around items-center">
               5
               <span>

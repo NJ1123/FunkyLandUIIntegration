@@ -35,13 +35,13 @@ function Gallery(props) {
           </>
         ) : (
           <>
-            <div className="grid grid-cols-4 md:gap-x-8 md:gap-y-10 md:my-20 md:mx-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-x-2 md:gap-y-6 md:my-20 md:mx-16">
               {userNfts.map((userNft, index) => (
                 <div key={index}>
                   <img
                     src={funkyNinjaGallery}
                     alt="Gallery-Img"
-                    className="md:w-max w-1/3 md:h-auto"
+                    className="md:w-max md:h-auto"
                     onClick={handleFunkyClick}
                   />
                 </div>

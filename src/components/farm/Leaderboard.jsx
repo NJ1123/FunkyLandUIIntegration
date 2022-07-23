@@ -6,8 +6,8 @@ import Badge from "../common/Badge";
 function Leaderboard() {
   return (
     <>
-      <div className="funky-card-group md:grid md:grid-cols-2 gap-10 px-10">
-        <div className="bg-[#063E5A] rounded-lg p-10">
+      <div className="funky-card-group py-0 md:py-10 rounded-t-2xl md:grid md:grid-cols-2 gap-10 md:px-10">
+        <div className="bg-[#063E5A] rounded-2xl px-3 py-5 md:p-10">
           <div className="section-topic text-center">Top FUNKY holders</div>
           <div className="grid grid-cols-4 place-items-center py-10">
             <div className="text-center pt-28">

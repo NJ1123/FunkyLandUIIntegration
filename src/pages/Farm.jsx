@@ -7,6 +7,7 @@ import FarmTab from "../components/farm/FarmTab";
 import BarnTab from "../components/farm/BarnTab";
 import Leaderboard from "../components/farm/Leaderboard";
 import Badge from "../components/common/Badge";
+import Community from "../components/common/Community";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -14,7 +15,7 @@ function classNames(...classes) {
 
 const selectedTabClasses = (selected) =>
   classNames(
-    "w-full rounded-2xl py-2.5 text-2xl section-topic text-center",
+    "w-full rounded-2xl py-2.5 text-xl md:text-2xl section-topic text-center",
     " focus:outline-none ",
     selected
       ? "bg-[#75C767] shadow ring ring-[#75C767] ring-1"
@@ -64,6 +65,8 @@ function Farm() {
             </Tab.Panels>
           </Tab.Group>
         </div>
+
+        <Community />
       </div>
     </>
   );

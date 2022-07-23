@@ -18,7 +18,7 @@ function ClaimAmount() {
           />
         </div>
         <div>
-          <button className="bg-white px-10 py-3 text-xl rounded-3xl text-black">
+          <button className="bg-white px-5 md:px-10 py-2 md:py-3 text-xl rounded-3xl text-black">
             Claim
           </button>
         </div>

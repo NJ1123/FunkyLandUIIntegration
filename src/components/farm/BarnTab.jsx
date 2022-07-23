@@ -7,8 +7,8 @@ function BarnTab() {
     <div>
       <div>
         <Stats />
-        <div className="funky-card-group px-5">
-          <div className="grid grid-cols-4 gap-10">
+        <div className="funky-card-group  px-2 md:px-5">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-10">
             <FunkyCard type="barn" />
             <FunkyCard type="barn" />
             <FunkyCard type="barn" />
