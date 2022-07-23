@@ -2,10 +2,11 @@ import React from "react";
 import Navbar from "../components/minting/Navbar";
 import "../assets/css/farm.css";
 import ConnectBtn from "../components/common/ConnectBtn";
-import LiveUpdatesbar from "../components/liveUpdates/LiveUpdatesbar";
 import { Tab } from "@headlessui/react";
 import FarmTab from "../components/farm/FarmTab";
 import BarnTab from "../components/farm/BarnTab";
+import Leaderboard from "../components/farm/Leaderboard";
+import Badge from "../components/common/Badge";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -45,9 +46,6 @@ function Farm() {
                   LEADERBOARD
                 </Tab>
                 <Tab className={({ selected }) => selectedTabClasses(selected)}>
-                  ACTIVITIES
-                </Tab>
-                <Tab className={({ selected }) => selectedTabClasses(selected)}>
                   LIVE
                 </Tab>
               </Tab.List>
@@ -59,9 +57,10 @@ function Farm() {
               <Tab.Panel className={tabPanelClasses}>
                 <BarnTab />
               </Tab.Panel>
-              <Tab.Panel className={tabPanelClasses}>Content 3</Tab.Panel>
+              <Tab.Panel className={tabPanelClasses}>
+                <Leaderboard />
+              </Tab.Panel>
               <Tab.Panel className={tabPanelClasses}>Content 4</Tab.Panel>
-              <Tab.Panel className={tabPanelClasses}>Content 5</Tab.Panel>
             </Tab.Panels>
           </Tab.Group>
         </div>
