@@ -45,9 +45,9 @@ function Farm() {
                 <Tab className={({ selected }) => selectedTabClasses(selected)}>
                   LEADERBOARD
                 </Tab>
-                <Tab className={({ selected }) => selectedTabClasses(selected)}>
+                {/* <Tab className={({ selected }) => selectedTabClasses(selected)}>
                   LIVE
-                </Tab>
+                </Tab> */}
               </Tab.List>
             </div>
             <Tab.Panels className="mt-2 rounded-xl">
@@ -60,7 +60,7 @@ function Farm() {
               <Tab.Panel className={tabPanelClasses}>
                 <Leaderboard />
               </Tab.Panel>
-              <Tab.Panel className={tabPanelClasses}>Content 4</Tab.Panel>
+              {/* <Tab.Panel className={tabPanelClasses}>Content 4</Tab.Panel> */}
             </Tab.Panels>
           </Tab.Group>
         </div>
