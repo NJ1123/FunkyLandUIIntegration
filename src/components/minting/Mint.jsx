@@ -70,7 +70,7 @@ function Mint(props) {
                 100 minted out of 1000
               </div>
               <div className="text-center font-inika text-[#622F00] text-2xl md:text-3xl my-10">
-                Select Quantity
+                Get Your Funkies
               </div>
               <div className="my-10">
                 <div className="counter">
