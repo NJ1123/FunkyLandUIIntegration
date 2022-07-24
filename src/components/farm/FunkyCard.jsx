@@ -27,9 +27,6 @@ function FunkyCard({ type, content }) {
 
   const mintCount = 10;
   const { wallet } = useWallet();
-  // const contract = new SmartContract({
-  //   address: new Address(config.stakingContract),
-  // });
 
   const destination = new Address(config.stakingContract);
   const nonce =
@@ -43,20 +40,7 @@ function FunkyCard({ type, content }) {
   // console.log("content", content);
   const handleStake = async () => {
     console.log("handleStake", content);
-    // const callTransactionOne = contract.call({
-    //   func: new ContractFunction("enter_staking"),
-    //   args: [new U32Value(mintCount)],
-    //   value: Balance.fromString(mintCount * 500000000000000000),
-    //   gasLimit: new GasLimit(config.GasLimit),
-    // });
-    // console.log("callTransaction", callTransactionOne);
-    // callTransactionOne.chainID = new ChainID(config.chainID);
-    // const { sessionId, error } = sendTransactions({
-    //   transactions: callTransactionOne,
-    // });
-
     const methodName = convertStringToHex("enter_staking");
-
     const transaction = new Transaction({
       sender: new Address(wallet.address),
       receiver: new Address(wallet.address),
@@ -88,43 +72,45 @@ function FunkyCard({ type, content }) {
   const handleUnstake = async () => {
     console.log("handleUnstake", content);
 
-    // const callTransactionOne = contract.call({
-    //   func: new ContractFunction("exit_staking"),
-    //   args: [new U32Value(mintCount)],
-    //   value: Balance.fromString(mintCount * 500000000000000000),
-    //   gasLimit: new GasLimit(80000000),
-    // });
-    // console.log("callTransaction", callTransactionOne);
-    // callTransactionOne.chainID = new ChainID(config.chainID);
-    // const { sessionId, error } = sendTransactions({
-    //   transactions: callTransactionOne,
-    // });
-
-    const methodName = convertStringToHex("exit_staking");
-
-    const transaction = new Transaction({
-      sender: new Address(wallet.address),
-      receiver: new Address(wallet.address),
-      chainID: new ChainID(config.chainID),
+    const contract = new SmartContract({
+      address: new Address(config.stakingContract),
+    });
+    const callTransactionOne = contract.call({
+      func: new ContractFunction("exit_staking"),
+      args: [new U32Value(mintCount)],
       gasLimit: new GasLimit(config.GasLimit),
-      data: new TransactionPayload(
-        "ESDTNFTTransfer" +
-          "@" +
-          tokenIdentifier +
-          "@" +
-          nonce +
-          "@" +
-          quantity +
-          "@" +
-          destination.valueHex +
-          "@" +
-          methodName
-      ),
+    });
+    console.log("callTransaction", callTransactionOne);
+    callTransactionOne.chainID = new ChainID(config.chainID);
+    const { sessionId, error } = sendTransactions({
+      transactions: callTransactionOne,
     });
 
-    const { sessionId, error } = sendTransactions({
-      transactions: transaction,
-    });
+    // const methodName = convertStringToHex("exit_staking");
+
+    // const transaction = new Transaction({
+    //   sender: new Address(wallet.address),
+    //   receiver: new Address(wallet.address),
+    //   chainID: new ChainID(config.chainID),
+    //   gasLimit: new GasLimit(config.GasLimit),
+    //   data: new TransactionPayload(
+    //     "ESDTNFTTransfer" +
+    //       "@" +
+    //       tokenIdentifier +
+    //       "@" +
+    //       nonce +
+    //       "@" +
+    //       quantity +
+    //       "@" +
+    //       destination.valueHex +
+    //       "@" +
+    //       methodName
+    //   ),
+    // });
+
+    // const { sessionId, error } = sendTransactions({
+    //   transactions: transaction,
+    // });
     console.log("error", error);
     console.log("sessionId", sessionId);
     //setMinting(true);

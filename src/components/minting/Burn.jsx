@@ -35,10 +35,6 @@ function Burn(props) {
   const handleBurn = async () => {
     // const token_identifier = "4255524E4E46542D633135663334";
     const token_identifier = convertStringToHex(config.BurnTokenIdentifier);
-    console.log(
-      "🚀 ~ file: Burn.jsx ~ line 37 ~ handleBurn ~ token_identifier",
-      token_identifier
-    );
     const nonce =
       selectedNft.nonce.toString(16).length % 2 === 0
         ? selectedNft.nonce.toString(16)
@@ -47,7 +43,8 @@ function Burn(props) {
     const quantity = "01";
     const destination =
       "00000000000000000500f41d383cef1ffd9225320b6d20179940ee17ddd9fa10";
-    const name = "6275726E47656E5A65726F46756E6B696573";
+    const methodName = convertStringToHex("burnGenZeroFunkies");
+    // const name = "6275726E47656E5A65726F46756E6B696573";
     const first_arg = token_identifier;
     const second_arg = nonce;
     const Data =
@@ -61,7 +58,7 @@ function Burn(props) {
       "@" +
       destination +
       "@" +
-      name +
+      methodName +
       "@" +
       second_arg;
 
