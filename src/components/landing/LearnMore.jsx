@@ -4,7 +4,7 @@ function LearnMore() {
   return (
     <>
       <div className="bg-bgPrimaryDark">
-        <div className="section-sm mb-20 py-14">
+        <div className="section-sm pb-20 py-14">
           <h2 className="section-title">Want to Learn More?</h2>
           <p className="section-subtitle pt-10 mx-10 md:mx-auto">
             Lorem Ipsum is simply dummy text of the printing and typesetting

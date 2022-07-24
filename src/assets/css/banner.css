@@ -11,7 +11,7 @@
     background-position: center;
   }
   .banner-btn {
-    @apply font-enriqueta px-5 py-10 text-white text-xl md:text-3xl font-bold uppercase mx-auto;
+    @apply font-enriqueta px-5 py-10 text-white text-xl md:text-2xl font-bold uppercase mx-auto;
     background: url("../images/bannerBtn.png");
     background-repeat: no-repeat;
     background-size: contain;
