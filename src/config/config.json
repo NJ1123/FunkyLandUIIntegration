@@ -1,16 +1,19 @@
 {
-  "BurnTokenIdentifier":"BURNNFT-c15f34",
-  "mintingContract" : "erd1qqqqqqqqqqqqqpgq7swns080rl7eyffjpdkjq9uegrhp0hwelggqk2whd2",
-  "devnet":{
+  "BurnTokenIdentifier": "TESTNFT-10605a",
+  "NftTokenIdentifier": "PHUNKEYS-c3d99c",
+  "mintingContract": "erd1qqqqqqqqqqqqqpgq7swns080rl7eyffjpdkjq9uegrhp0hwelggqk2whd2",
+  "stakingContract": "erd1qqqqqqqqqqqqqpgqwrvrqkre55pjm2j7tynxsa5v26yrwtyxlggqg9szqg",
+  "devnet": {
     "network": {
-        "id": "devnet",
-        "name": "Devnet",
-        "egldLabel": "xEGLD",
-        "walletAddress": "https://devnet-wallet.elrond.com",
-        "apiAddress": "https://devnet-api.elrond.com",
-        "explorerAddress": "http://devnet-explorer.elrond.com"
-      }
-  } ,
+      "id": "devnet",
+      "name": "Devnet",
+      "egldLabel": "xEGLD",
+      "walletAddress": "https://devnet-wallet.elrond.com",
+      "apiAddress": "https://devnet-api.elrond.com",
+      "explorerAddress": "http://devnet-explorer.elrond.com"
+    }
+  },
+  "GasLimit": 80000000,
   "chainID": "D",
   "walletConnectLink": "https://maiar.page.link/?apn=com.elrond.maiar.wallet&isi=1519405832&ibi=com.elrond.maiar.wallet&link=https://maiar.com/"
 }

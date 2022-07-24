@@ -24,14 +24,21 @@ import {
 } from "@elrondnetwork/erdjs";
 
 import { useWallet } from "../../hooks/useWallet";
+import { convertStringToHex } from "../../utils/convertToHex";
 
 function Burn(props) {
   const { wallet, handleLogout, trimWallet } = useWallet();
   const { setMinting } = props;
   const activeTransactionStatus = transactionServices.useGetActiveTransactionsStatus();
 
+  console.log("minting contract", new Address(config.mintingContract));
   const handleBurn = async () => {
-    const token_identifier = "4255524E4E46542D633135663334";
+    // const token_identifier = "4255524E4E46542D633135663334";
+    const token_identifier = convertStringToHex(config.BurnTokenIdentifier);
+    console.log(
+      "🚀 ~ file: Burn.jsx ~ line 37 ~ handleBurn ~ token_identifier",
+      token_identifier
+    );
     const nonce =
       selectedNft.nonce.toString(16).length % 2 === 0
         ? selectedNft.nonce.toString(16)
@@ -139,7 +146,7 @@ function Burn(props) {
     if (wallet.connected) {
       axios
         .get(
-          `https://devnet-api.elrond.com/accounts/${wallet.address}/nfts?collections=BURNNFT-c15f34`
+          `https://devnet-api.elrond.com/accounts/${wallet.address}/nfts?collections=${config.BurnTokenIdentifier}`
         )
         .then((response) => {
           setUserNfts(response.data);

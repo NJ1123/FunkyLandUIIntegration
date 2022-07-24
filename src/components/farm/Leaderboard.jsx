@@ -62,8 +62,10 @@ function Leaderboard() {
           <div className=" grid grid-cols-7  place-items-center gap-y-5 py-5">
             {[4, 5, 6, 7, 8, 9, 10].map((num) => (
               <>
-                <Badge number={num} />
-                <div className="bg-[#3C3C3C] col-span-6 grid grid-cols-3  rounded-full text-center  place-self-stretch place-items-center">
+                <Badge number={num}/>
+                <div
+                  className="bg-[#3C3C3C] col-span-6 grid grid-cols-3  rounded-full text-center  place-self-stretch place-items-center"
+                >
                   <img
                     src={bullAvatar}
                     alt="Second"
