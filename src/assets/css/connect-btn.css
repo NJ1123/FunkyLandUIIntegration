@@ -12,6 +12,6 @@
   }
 
   .wallet-btn {
-    @apply text-xl w-full py-2 outline outline-amber-300 rounded-2xl text-white;
+    @apply text-xl w-full py-2 outline outline-amber-300 rounded-2xl text-white hover:opacity-70;
   }
 }
