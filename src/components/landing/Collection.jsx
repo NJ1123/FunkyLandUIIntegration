@@ -3,6 +3,7 @@ import { funkylandIcon, funkyNinja } from "../../assets/images/images";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 function Collection() {
   useEffect(() => {
@@ -36,7 +37,6 @@ function Collection() {
               Ipsum passages, and more recently with desktop publishing software
               like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
-            <button>Read Whitepaper</button>
           </div>
           <div className="section-img m-10 md:w-2/5 md:block hidden">
             <img src={funkyNinja} alt="Intro" />
@@ -67,8 +67,9 @@ function Collection() {
             </p>
           </div>
         </div>
-
-        <button className="section-btn">Mint Now</button>
+        <Link to="/app/minting">
+          <button className="section-btn">Mint Now</button>
+        </Link>
       </div>
     </>
   );

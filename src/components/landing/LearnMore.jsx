@@ -11,7 +11,13 @@ function LearnMore() {
             industry. Lorem Ipsum has been the industrys standard dummy text
             ever since the 15
           </p>
-          <button className="section-btn">Read Whitepaper</button>
+          <a
+            href="https://docs.funkyland.org/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button className="section-btn">Read Whitepaper</button>
+          </a>
         </div>
       </div>
     </>

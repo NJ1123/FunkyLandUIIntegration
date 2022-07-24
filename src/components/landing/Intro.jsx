@@ -20,7 +20,13 @@ function Intro() {
                 Ipsum passages, and more recently with desktop publishing
                 software like Aldus PageMaker including versions of Lorem Ipsum.
               </p>
-              <button className="section-btn">Read Whitepaper</button>
+              <a
+                href="https://docs.funkyland.org/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <button className="section-btn">Read Whitepaper</button>
+              </a>
             </div>
           </div>
         </div>

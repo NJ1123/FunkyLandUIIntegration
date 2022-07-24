@@ -26,7 +26,13 @@ function BerryTokens() {
                   desktop publishing software like Aldus PageMaker including
                   versions of Lorem Ipsum.
                 </p>
-                <button className="section-btn">Berrynomics</button>
+                <a
+                  href="https://docs.funkyland.org/berrynomics"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <button className="section-btn">Berrynomics</button>
+                </a>
               </div>
             </div>
           </div>
