@@ -57,7 +57,11 @@ function Navbar(props) {
           <a href="#berry">
             <li className="nav-item">Gallery</li>
           </a>
-          <a href="https://docs.funkyland.org/">
+          <a
+            href="https://docs.funkyland.org/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <li className="nav-item">Whitepaper</li>
           </a>
           {/* <Link to="/app/minting">
