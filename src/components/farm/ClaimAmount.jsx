@@ -6,7 +6,7 @@ function ClaimAmount() {
   const berryAmt = "25010";
   return (
     <div>
-      <div className="grid grid-cols-4 max-w-3xl mx-auto place-items-center bg-[#064116] bg-opacity-50 p-5 text-center text-white text-2xl ring-2 ring-[#8FC27E] rounded-md rounded-tl-none">
+      <div className="grid grid-cols-4 max-w-3xl mx-auto place-items-center bg-[#064116] bg-opacity-50 p-5 text-center text-white text-xl md:text-2xl ring-2 ring-[#8FC27E] rounded-md rounded-tl-none">
         <div className="">Claim $BERRY</div>
         <div className="place-self-stretch space-y-5 col-span-2 px-3">
           <div>🍇 {berryAmt}</div>

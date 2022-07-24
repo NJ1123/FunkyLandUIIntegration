@@ -7,6 +7,6 @@
     @apply bg-communityIconBg bg-no-repeat bg-cover p-8;
   }
   .community-icon {
-    @apply p-2 rounded-full text-4xl;
+    @apply p-2 rounded-full text-3xl md:text-4xl;
   }
 }

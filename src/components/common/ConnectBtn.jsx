@@ -25,7 +25,7 @@ function ConnectBtn() {
     WalletConnectLoginButton,
   } = DappUI;
   const handleOutsideClick = (e) => {
-    console.log(e, e.path.includes(popupRef.current));
+    // console.log(e, e.path.includes(popupRef.current));
     if (e.path[0] !== btnRef.current && !e.path.includes(popupRef.current)) {
       handleClose();
     }

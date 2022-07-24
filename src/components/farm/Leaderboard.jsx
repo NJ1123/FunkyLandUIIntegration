@@ -21,8 +21,10 @@ function Leaderboard() {
                   <Badge number="2" />
                 </div>
               </div>
-              <div className="text-[#A8A8A8]">@username</div>
-              <div className="text-[#42FF00] text-xl">5</div>
+              <div className="text-[#A8A8A8] text-sm md:text-base">
+                @username
+              </div>
+              <div className="text-[#42FF00] text-lg md:text-xl">5</div>
             </div>
 
             <div className="col-span-2 ">
@@ -36,8 +38,10 @@ function Leaderboard() {
                     <Badge number="1" />
                   </div>
                 </div>
-                <div className="text-[#A8A8A8] text-2xl">@username</div>
-                <div className="text-[#42FF00] text-4xl">5</div>
+                <div className="text-[#A8A8A8] text-xl  md:text-2xl">
+                  @username
+                </div>
+                <div className="text-[#42FF00] text-3xl md:text-4xl">5</div>
               </div>
             </div>
 
@@ -52,8 +56,10 @@ function Leaderboard() {
                   <Badge number="3" />
                 </div>
               </div>
-              <div className="text-[#A8A8A8]">@username</div>
-              <div className="text-[#42FF00] text-xl">5</div>
+              <div className="text-[#A8A8A8] text-sm md:text-base">
+                @username
+              </div>
+              <div className="text-[#42FF00] text-lg md:text-xl">5</div>
             </div>
           </div>
         </div>
@@ -62,17 +68,17 @@ function Leaderboard() {
           <div className=" grid grid-cols-7  place-items-center gap-y-5 py-5">
             {[4, 5, 6, 7, 8, 9, 10].map((num) => (
               <>
-                <Badge number={num}/>
-                <div
-                  className="bg-[#3C3C3C] col-span-6 grid grid-cols-3  rounded-full text-center  place-self-stretch place-items-center"
-                >
+                <Badge number={num} />
+                <div className="bg-[#3C3C3C] col-span-6 grid grid-cols-3  rounded-full text-center  place-self-stretch place-items-center">
                   <img
                     src={bullAvatar}
                     alt="Second"
                     className="not-first place-self-start"
                   />
-                  <div className="text-[#A8A8A8] text-xl">@username</div>
-                  <div className="text-[#42FF00] text-xl">5</div>
+                  <div className="text-[#A8A8A8] text-lg md:text-xl">
+                    @username
+                  </div>
+                  <div className="text-[#42FF00] text-lg md:text-xl">5</div>
                 </div>
               </>
             ))}

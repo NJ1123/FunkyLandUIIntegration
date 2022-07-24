@@ -31,7 +31,7 @@ function Burn(props) {
   const { setMinting } = props;
   const activeTransactionStatus = transactionServices.useGetActiveTransactionsStatus();
 
-  console.log("minting contract", new Address(config.mintingContract));
+  // console.log("minting contract", new Address(config.mintingContract));
   const handleBurn = async () => {
     // const token_identifier = "4255524E4E46542D633135663334";
     const token_identifier = convertStringToHex(config.BurnTokenIdentifier);
@@ -39,7 +39,6 @@ function Burn(props) {
       selectedNft.nonce.toString(16).length % 2 === 0
         ? selectedNft.nonce.toString(16)
         : `${"0" + selectedNft.nonce.toString(16)}`;
-    console.log(nonce);
     const quantity = "01";
     const destination =
       "00000000000000000500f41d383cef1ffd9225320b6d20179940ee17ddd9fa10";
@@ -132,7 +131,7 @@ function Burn(props) {
     console.log("error", error);
     console.log("sessionId", sessionId);
 
-    console.log("mintingcontract", config.mintingContract);
+    // console.log("mintingcontract", config.mintingContract);
 
     setMinting(true);
   };
@@ -158,10 +157,10 @@ function Burn(props) {
           <div className="py-6 md:py-12">
             <div className="w-full bg-[#34A0AE]  max-w-6xl mx-auto rounded-2xl p-6">
               <div className="bg-[#337A83] rounded-2xl p-6">
-                <div className="text-center section-title text-5xl">
+                <div className="text-center section-title text-3xl md:text-5xl">
                   Burn Funky Eggs
                 </div>
-                <div className="text-center font-inika text-[#DFFF1A] text-2xl mt-3 ">
+                <div className="text-center font-inika text-[#DFFF1A] text-xl md:text-2xl mt-3 ">
                   Burn and Get New Funkies
                 </div>
                 <div className="flex mt-10">
@@ -183,15 +182,10 @@ function Burn(props) {
                               className="w-full"
                               onClick={() => {
                                 setSelectedNft(userNft);
-                                console.log(
-                                  typeof userNft.nonce,
-                                  userNft.nonce.toString(16)
-                                );
                                 const nonce =
                                   userNft.nonce.toString(16).length % 2 === 0
                                     ? userNft.nonce.toString(16)
                                     : ` ${"0" + userNft.nonce.toString(16)}`;
-                                console.log("nonce", nonce);
                               }}
                             />
                           </div>

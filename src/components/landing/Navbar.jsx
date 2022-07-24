@@ -11,7 +11,9 @@ function Navbar(props) {
   };
   return (
     <>
-      <nav className={`bg-[#5E320A]  md:flex  md:justify-around`}>
+      <nav
+        className={`bg-[#5E320A]  md:flex  md:justify-around drop-shadow-xl`}
+      >
         <div className=" flex items-center p-3 md:p-0 justify-between md:justify-center">
           <div className="md:hidden grow flex justify-center">
             <Logo className=" h-10 w-auto md:h-16" />

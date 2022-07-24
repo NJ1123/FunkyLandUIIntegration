@@ -7,6 +7,6 @@
     @apply bg-navbarBg bg-no-repeat bg-cover;
   }
   .nav-item {
-    @apply font-inika font-bold text-white text-lg md:text-sm lg:text-lg uppercase;
+    @apply font-inika font-bold text-white text-lg md:text-sm lg:text-lg uppercase hover:text-[#FBCB00] active:text-[#FBCB00];
   }
 }

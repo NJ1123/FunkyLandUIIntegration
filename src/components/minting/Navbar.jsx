@@ -12,7 +12,9 @@ function Navbar(props) {
   };
   return (
     <>
-      <nav className={`md:flex  md:justify-around items-center md:py-1`}>
+      <nav
+        className={`md:flex  md:justify-around items-center md:py-1 drop-shadow-lg`}
+      >
         <div className=" flex items-center p-3 md:p-0 justify-between md:justify-center">
           <div className="grow flex justify-center">
             <Logo className=" h-10 w-auto md:h-16 md:py-2" />

@@ -55,7 +55,7 @@ function Minting() {
               <div className=" section-img my-10 md:hidden">
                 <img src={funkylandIcon} alt="Intro" />
               </div>
-              <p className="text-2xl text-white mt-5 mx-10 md:mx-auto">
+              <p className="text-xl md:text-2xl text-white mt-5 mx-10 md:mx-auto">
                 Funkyland is the place for all the bears and bulls who are
                 residing on this place.Be the part of unleshing adventure and
                 ride the fun with us .You can get your funkies by minting below.

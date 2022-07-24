@@ -36,10 +36,10 @@ function FunkyCard({ type, content }) {
   const tokenIdentifier = convertStringToHex(content.collection);
   const quantity = "01";
 
-  console.log("destination", destination.valueHex);
+  // console.log("destination", destination.valueHex);
   // console.log("content", content);
   const handleStake = async () => {
-    console.log("handleStake", content);
+    // console.log("handleStake", content);
     const methodName = convertStringToHex("enter_staking");
     const transaction = new Transaction({
       sender: new Address(wallet.address),
@@ -70,7 +70,7 @@ function FunkyCard({ type, content }) {
   };
 
   const handleUnstake = async () => {
-    console.log("handleUnstake", content);
+    // console.log("handleUnstake", content);
 
     const contract = new SmartContract({
       address: new Address(config.stakingContract),
@@ -123,7 +123,7 @@ function FunkyCard({ type, content }) {
           <div className="mx-auto rounded-lg col-span-2">
             <img src={bullCard} alt="Bull Card" />
           </div>
-          <div className="text-2xl col-span-2">{content.name}</div>
+          <div className="text-xl md:text-2xl col-span-2">{content.name}</div>
           <>
             <div className="text-left text-[#DBD30F]">Stamina</div>
             <div className="text-right">{stamina}</div>
@@ -142,7 +142,7 @@ function FunkyCard({ type, content }) {
         </div>
         <div className="justify-center col-span-2 my-5">
           <button
-            className="text-center text-xl bg-[#8FC27E] shadow-md rounded-lg rounded-tl-none py-3 px-6 w-full"
+            className="text-center text:lg md:text-xl bg-[#8FC27E] shadow-md rounded-lg rounded-tl-none py-3 px-6 w-full"
             onClick={type === "farm" ? handleUnstake : handleStake}
           >
             {type === "farm" ? "Return to Barn" : "Send to Farm"}

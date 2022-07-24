@@ -4,7 +4,7 @@ import { bullAvatar } from "../../assets/images/images";
 function Stats() {
   return (
     <div>
-      <div className="grid grid-cols-3 md:grid-cols-4 rounded-tl-xl rounded-tr-xl text-white text-2xl text-center">
+      <div className="grid grid-cols-3 md:grid-cols-4 rounded-tl-xl rounded-tr-xl text-white text-xl md:text-2xl text-center">
         <div className="stat-box hidden md:block ">
           <h1>Total Funkies</h1>
           <p>15</p>

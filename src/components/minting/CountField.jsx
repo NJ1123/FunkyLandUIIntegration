@@ -15,7 +15,7 @@ function CountField(props) {
   };
   return (
     <div className="counter">
-      <div className=" flex items-center text-2xl justify-center">
+      <div className=" flex items-center text-xl md:text-2xl justify-center">
         <div className="decrement" onClick={decrement}>
           <AiOutlineMinusCircle />
         </div>

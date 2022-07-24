@@ -4,7 +4,7 @@
 
 @layer components {
   .connect-btn {
-    @apply font-inika px-4 py-4 text-lg font-bold uppercase mx-auto;
+    @apply font-inika px-4 py-4 md:text-lg font-bold uppercase mx-auto;
     background: url("../images/btn-img.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,6 +12,6 @@
   }
 
   .wallet-btn {
-    @apply text-xl w-full py-2 outline outline-amber-300 rounded-2xl text-white hover:opacity-70;
+    @apply md:text-xl w-full py-2 outline outline-amber-300 rounded-2xl text-white hover:opacity-70;
   }
 }
