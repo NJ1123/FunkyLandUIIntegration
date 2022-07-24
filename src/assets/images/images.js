@@ -19,6 +19,7 @@ import navbarBg from "./navbar-bg.png";
 import phaseInactive from "./phase-inactive.png";
 import phaseActive from "./phase-active.png";
 import sectionImageBg from "./sectionImageBg.png";
+import upArrow from "./up_arrow_round.png";
 
 export {
   bannerImg,
@@ -42,4 +43,5 @@ export {
   phaseActive,
   phaseInactive,
   sectionImageBg,
+  upArrow,
 };
