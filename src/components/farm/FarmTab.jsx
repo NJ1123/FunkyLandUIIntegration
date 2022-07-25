@@ -18,6 +18,7 @@ import {
   Query,
   SmartContract,
   U32Value,
+  U64Value,
 } from "@elrondnetwork/erdjs/out";
 import { sendTransactions } from "@elrondnetwork/dapp-core";
 
@@ -54,6 +55,15 @@ function FarmTab() {
     const { returnData } = await proxy.queryContract(addressStateQuery);
     return returnData;
   };
+  const getNonceStake = async () => {
+    const nonceStateQuery = new Query({
+      address: new Address(config.stakingContract),
+      func: new ContractFunction("getNonceState"),
+      args: [new U64Value("07")],
+    });
+    const { returnData } = await proxy.queryContract(nonceStateQuery);
+    return returnData;
+  };
   useEffect(() => {
     const getStakingStateAsync = async () => {
       const stakingState = await getStakingState();
@@ -63,6 +73,53 @@ function FarmTab() {
       console.log("data", splitStakingState(stakingBuffer));
     };
     getStakingStateAsync();
+  }, [wallet]);
+
+  useEffect(() => {
+    const getAddressStateAsync = async () => {
+      if (!wallet.address) {
+        return;
+      }
+      const addressStakeData = await getAddressStake();
+      console.log("addressStakeData", addressStakeData);
+      const addressBuffer = Buffer.from(addressStakeData[0], "base64");
+      console.log(
+        "(splitAddressStake(addressBuffer))",
+        splitAddressStake(addressBuffer)
+      );
+
+      // const rewardData = await getRewards();
+      // setReward(
+      //   rewardData[0].length > 0
+      //     ? parseInt(Buffer.from(rewardData[0], "base64").toString("hex"), 16) /
+      //         10 ** 5 || 0
+      //     : ""
+      // );
+    };
+    getAddressStateAsync();
+  }, [wallet]);
+  useEffect(() => {
+    const getNonceStateAsync = async () => {
+      if (!wallet.address) {
+        return;
+      }
+      const nonceStakeData = await getNonceStake();
+      console.log("nonceStakeData", nonceStakeData);
+      const nonceBuffer = Buffer.from(nonceStakeData[0], "base64");
+      console.log(
+        "(splitNonceStake(nonceBuffer))",
+        splitNonceStake(nonceBuffer)
+      );
+
+      // const rewardData = await getRewards();
+      // setReward(
+      //   rewardData[0].length > 0
+      //     ? parseInt(Buffer.from(rewardData[0], "base64").toString("hex"), 16) /
+      //         10 ** 5 || 0
+      //     : ""
+      // );
+    };
+    getNonceStateAsync();
   }, [wallet]);
 
   const splitStakingState = (stakingBuffer) => {
@@ -76,18 +133,89 @@ function FarmTab() {
       stakingBuffer.toString("hex", a, (a += 8)),
       16
     );
-    const m = stakingBuffer.readUInt32BE(a);
-    a += 4;
-    const totalStakedAmount =
-      new BigNumber(
-        "0x" + stakingBuffer.toString("hex", a, (a += m))
-      ).toNumber() /
-      10 ** 5;
+    
+    // const totalStakedAmount = new U64Value(
+    //   "0x" + stakingBuffer.toString("hex", a, (a += m))
+    // ).toNumber();
+
+    const totalStakedAmount = parseInt(
+      + stakingBuffer.toString("hex", a, (a += 8)),16
+    );
+    const totalBullStakedAmount = parseInt(
+      + stakingBuffer.toString("hex", a, (a += 8))
+    );
+    const total_bear_staked_amount= parseInt(
+      + stakingBuffer.toString("hex", a, (a += 8))
+    );
+    const total_ninja_bear_staked_amount= parseInt(
+      + stakingBuffer.toString("hex", a, (a += 8))
+    );
+    const total_lone_bear_staked_amount=parseInt(
+      + stakingBuffer.toString("hex", a, (a += 8))
+    );
+    const total_funky_sluggers_staked_amount=parseInt(
+      + stakingBuffer.toString("hex", a, (a += 8))
+    );
+
     return {
       isActive,
       currentEpoch,
       currentStakingRound,
       totalStakedAmount,
+      totalBullStakedAmount,
+      total_bear_staked_amount,
+      total_ninja_bear_staked_amount,
+      total_lone_bear_staked_amount,
+      total_funky_sluggers_staked_amount
+
+    };
+  };
+
+  const splitAddressStake = (addressStake) => {
+    let a = 0;
+    const barrel_capacity  = parseInt(addressStake.toString("hex", a, (a += 8)), 16);
+ 
+/////////////////////////
+    let m = addressStake.readUInt32BE(a)
+    a += 4
+    const rewards_collected =
+      new BigNumber(
+        "0x" + addressStake.toString("hex", a, (a += m)),
+      ).toNumber() /
+        10 ** 5 || 0
+///////////////////////////////
+    return {
+      barrel_capacity,
+      rewards_collected,
+
+    };
+  };
+
+  const splitNonceStake = (NonceStake) => {
+    let a = 0;
+    const index  = parseInt(NonceStake.toString("hex", a, (a += 4)), 16);
+    const staked = "01" == NonceStake.toString("hex", a, (a += 1));
+    const unlock_epoch =parseInt(
+      NonceStake.toString("hex", a, (a += 8)),
+      16
+    );
+      const current_epoch = parseInt(
+        NonceStake.toString("hex", a, (a += 8)),
+        16
+      );
+    const lastclaimedround=parseInt(
+      NonceStake.toString("hex", a, (a += 8)),
+      16
+    );
+ 
+
+    return {
+      index,
+      staked,
+      unlock_epoch,
+      current_epoch,
+      lastclaimedround
+
     };
   };
   return (
