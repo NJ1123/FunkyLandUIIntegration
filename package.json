@@ -1,6 +1,7 @@
 {
   "name": "funkyland",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@elrondnetwork/dapp-core": "^0.7.1",
