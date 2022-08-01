@@ -8,8 +8,8 @@ module.exports = {
         communityIconBg: "url('../images/communityIconBg.png')",
       },
       colors: {
-        bgPrimary: "#0A626D",
-        bgPrimaryDark: "#095963",
+        bgPrimary: "#000", //#0A626D
+        bgPrimaryDark: "#000", //#095963
         bgPopup: "#337A83",
       },
       fontFamily: {

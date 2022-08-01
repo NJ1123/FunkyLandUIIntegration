@@ -1,5 +1,3 @@
-import bannerImg from "./bannerImage.png";
-import bannerBtn from "./bannerBtn.png";
 import badge from "./badge.png";
 import btnImg from "./btn-img.png";
 import bullAvatar from "./bull-avatar.png";
@@ -13,6 +11,8 @@ import funkylandIcon from "./funkyland-icon.png";
 import funkyEgg from "./funky-egg.png";
 import funkyNinja from "./funky-ninja.png";
 import funkyNinjaGallery from "./funky-ninja-gallery.png";
+import funkiesBull from "./funkies_bull.png";
+import funkiesBear from "./funkies_bear.png";
 import land from "./land.png";
 import logo from "./funkyland-logo.png";
 import navbarBg from "./navbar-bg.png";
@@ -22,8 +22,6 @@ import sectionImageBg from "./sectionImageBg.png";
 import upArrow from "./up_arrow_round.png";
 
 export {
-  bannerImg,
-  bannerBtn,
   badge,
   btnImg,
   bullAvatar,
@@ -37,6 +35,8 @@ export {
   funkyEgg,
   funkyNinja,
   funkyNinjaGallery,
+  funkiesBull,
+  funkiesBear,
   land,
   logo,
   navbarBg,

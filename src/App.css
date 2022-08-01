@@ -7,7 +7,7 @@
     box-sizing: border-box;
   }
   body {
-    @apply bg-[#0A626D];
+    @apply bg-black;
   }
   img {
     max-width: 100%;
@@ -17,32 +17,33 @@
     @apply md:max-w-6xl mx-auto text-center;
   }
   .section-sm {
-    @apply max-w-4xl mx-auto text-center;
+    @apply max-w-2xl mx-auto text-center;
   }
   .section-title {
-    @apply font-enriqueta text-4xl md:text-5xl font-bold text-[#FFE600] text-center;
+    @apply font-inika text-3xl md:text-4xl font-bold text-[#FFE600] text-center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .section-topic {
+    @apply font-inika font-bold text-2xl md:text-3xl text-[#FFE600] text-center md:text-left;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .section-subtitle {
-    @apply font-enriqueta text-xl md:text-2xl py-5;
+    @apply font-inika text-lg md:text-xl py-5;
   }
 
-  .section-topic {
-    @apply font-enriqueta font-bold text-3xl md:text-4xl text-[#FFE600] text-center md:text-left;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-
+  /* TODO add button image */
   .section-btn {
-    @apply bg-[#29B168] px-8 py-2 my-10 text-white text-lg md:text-xl font-enriqueta;
+    @apply bg-[#29B168] px-8 py-2 my-10 text-white text-lg md:text-xl font-inika;
   }
 
   .section-div-img {
-    @apply flex flex-col items-center md:flex-row my-10 mx-auto md:text-lg;
+    @apply flex flex-col items-center md:flex-row my-10 md:text-lg;
   }
 
   .section-img {

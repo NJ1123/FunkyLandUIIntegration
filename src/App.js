@@ -1,7 +1,5 @@
 import React from "react";
 import "./App.css";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Landing from "./pages/Landing";
@@ -15,17 +13,16 @@ import {
 import config from "./config/config.json";
 
 function App() {
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
   const walletConnectBridgeAddresses = ["https://bridge.walletconnect.org"];
   const walletConnectBridge =
     walletConnectBridgeAddresses[
       Math.floor(Math.random() * walletConnectBridgeAddresses.length)
     ];
-  const { TransactionsToastList, SignTransactionsModals, NotificationModal } =
-    DappUI;
+  const {
+    TransactionsToastList,
+    SignTransactionsModals,
+    NotificationModal,
+  } = DappUI;
   const network = config.devnet.network;
   const walletConnectDeepLink = config.walletConnectLink;
 

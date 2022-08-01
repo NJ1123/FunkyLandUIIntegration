@@ -12,11 +12,11 @@ function Navbar(props) {
   return (
     <>
       <nav
-        className={`bg-[#5E320A]  md:flex  md:justify-around drop-shadow-xl relative`}
+        className={` md:flex  md:justify-around items-center drop-shadow-xl relative`}
       >
         <div className="md:hidden flex items-center p-3 md:p-0 justify-between md:justify-center">
           <div className="grow flex justify-center">
-            <Logo className=" h-10 w-auto md:h-16" />
+            <Logo className=" h-16 w-auto" />
           </div>
 
           <button
@@ -36,6 +36,9 @@ function Navbar(props) {
               <path d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </button>
+        </div>
+        <div className="hidden md:block">
+          <Logo className="w-auto h-20" />
         </div>
         <ul
           className={

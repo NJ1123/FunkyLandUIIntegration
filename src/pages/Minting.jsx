@@ -44,9 +44,7 @@ function Minting() {
         <div className="section" id="funkies">
           <div
             className="section-div-img "
-            data-aos="fade-right"
-            // data-aos-offset="400"
-            data-aos-easing="ease-in-sine"
+
           >
             <div className="md:w-3/5 text-left">
               <h3 className="section-title  md:text-left">

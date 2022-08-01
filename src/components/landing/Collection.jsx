@@ -1,70 +1,49 @@
 import React, { useEffect } from "react";
-import { funkylandIcon, funkyNinja } from "../../assets/images/images";
+import {
+  funkiesBear,
+  funkiesBull,
+} from "../../assets/images/images";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import SectionHeader from "../common/SectionHeader";
 
 function Collection() {
-  // useEffect(() => {
-  //   AOS.init();
-  //   AOS.refresh();
-  // }, []);
   return (
     <>
-      <div className="section" id="funkies">
+      <div className="section mt-20 md:mt-0" id="funkies">
         <div>
           <SectionHeader>Funkies</SectionHeader>
-          <h4 className="section-subtitle ">Funky Collection</h4>
         </div>
 
-        <div
-          className="section-div-img mx-8"
-          // data-aos="fade-right"
-          // // data-aos-offset="400"
-          // data-aos-easing="ease-in-sine"
-        >
-          <div className="md:w-3/5 text-left">
-            <h3 className="section-topic">Bears</h3>
+        <div className="section-div-img mx-8">
+          <div className="md:w-3/5 text-left mt-10">
+            <h3 className="section-topic text-left md:text-center">BULLS</h3>
             <div className="w-full mx-auto my-10 md:hidden">
-              <img src={funkylandIcon} alt="Intro" />
+              <img src={funkiesBull} alt="Intro" />
             </div>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry&apos;s standard dummy
-              text ever since the 150 essentially unchanged. It was popularised
-              in the 1960s with the release of Letraset sheets containing Lorem
-              Ipsum passages, and more recently with desktop publishing software
-              like Aldus PageMaker including versions of Lorem Ipsum.
+              Bulls are the disciplined and experts in harvesting $BERRY. They
+              are the main source of production of $BERRY in FUNKYLAND.
             </p>
           </div>
-          <div className="section-img m-10 md:w-2/5 md:block hidden">
-            <img src={funkyNinja} alt="Intro" />
+          <div className="px-10 m-10 md:w-2/5 md:block hidden">
+            <img src={funkiesBull} alt="Intro" />
           </div>
         </div>
 
-        <div
-          className="section-div-img mx-8"
-          // data-aos="fade-left"
-          // // data-aos-offset="400"
-          // data-aos-easing="ease-in-sine"
-        >
-          <div className="section-img m-10 md:w-2/5 md:block hidden">
-            <img src={funkyNinja} alt="Intro" />
+        <div className="section-div-img mx-8">
+          <div className="px-10 m-10 md:w-2/5 md:block hidden">
+            <img src={funkiesBear} alt="Intro" />
           </div>
           <div className="md:w-3/5 text-left">
-            <h3 className="section-topic">Bulls</h3>
+            <h3 className="section-topic text-left md:text-center">BEARS</h3>
             <div className="w-full mx-auto my-10 md:hidden">
-              <img src={funkylandIcon} alt="Intro" />
+              <img src={funkiesBear} alt="Intro" />
             </div>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry&apos;s standard dummy
-              text ever since the 150 essentially unchanged. It was popularised
-              in the 1960s with the release of Letraset sheets containing Lorem
-              Ipsum passages, and more recently with desktop publishing software
-              like Aldus PageMaker including versions of Lorem Ipsum.
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 150 essentially unchanged
             </p>
           </div>
         </div>

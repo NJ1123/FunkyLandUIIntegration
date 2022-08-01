@@ -63,7 +63,7 @@ function Mint(props) {
         <div className="bg-[#337A83] rounded-2xl md:max-w-6xl mx-auto md:flex md:items-center">
           <div className="md:w-1/2 bg-[#34A0AE] rounded-2xl p-6 ">
             <div className="bg-[#A8D4E5] rounded-2xl p-6">
-              <div className="text-center font-enriqueta font-black text-[#622F00] text-3xl md:text-5xl">
+              <div className="text-center font-inika font-black text-[#622F00] text-3xl md:text-5xl">
                 Mint Funkies
               </div>
               <div className="text-center font-inika text-[#622F00] text-xl md:text-2xl">

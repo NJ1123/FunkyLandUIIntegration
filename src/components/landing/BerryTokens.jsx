@@ -5,34 +5,28 @@ function BerryTokens() {
   return (
     <>
       <div className="bg-bgPrimaryDark ">
-        <div className="section pt-16 flex items-center" id="berry">
+        <div className="section md:pt-16 flex items-center" id="berry">
           <div>
-            <div>
-              <h2 className="section-title ">Berry</h2>
-              <h4 className="section-subtitle ">Tokens</h4>
-            </div>
-
             <div className="section-div-img mx-8">
-              <div className="m-10 md:w-2/5">
-                <img src={funkylandIcon} alt="Intro" />
-              </div>
-              <div className="md:w-3/5 ">
-                <p className="text-left">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry&apos;s
-                  standard dummy text ever since the 150 essentially unchanged.
-                  It was popularised in the 1960s with the release of Letraset
-                  sheets containing Lorem Ipsum passages, and more recently with
-                  desktop publishing software like Aldus PageMaker including
-                  versions of Lorem Ipsum.
+              <div className="md:w-3/5">
+                <h2 className="section-topic text-left">$Berry Tokens</h2>
+                <p className="text-left pt-6">
+                  Berry is the mian in game currency.It will be used for buying
+                  in game items and also it is given to all the funky holders
+                  when they are in farm (stake).
                 </p>
-                <a
-                  href="https://docs.funkyland.org/berrynomics"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button className="section-btn">Berrynomics</button>
-                </a>
+                <div className="text-left">
+                  <a
+                    href="https://docs.funkyland.org/berrynomics"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <button className="section-btn">Berrynomics</button>
+                  </a>
+                </div>
+              </div>
+              <div className="md:w-2/5">
+                <img src={funkylandIcon} alt="Intro" />
               </div>
             </div>
           </div>
