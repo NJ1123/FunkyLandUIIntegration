@@ -3,7 +3,7 @@ import { funkylandIcon } from "../../assets/images/images";
 
 function Intro() {
   return (
-    <div className="bg-bgPrimaryDark ">
+    <div ds>
       <div className="section flex items-center pt-16" id="about_us">
         <div>
           <h2 className="section-title ">FUNKYLAND</h2>

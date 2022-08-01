@@ -9,23 +9,25 @@ import Roadmap from "../components/landing/Roadmap";
 import Navbar from "../components/landing/Navbar";
 import ScrollUp from "react-scroll-up";
 import "../assets/css/landing.css";
+import NewHeader from "../components/common/SectionHeader";
 
 function Landing() {
   return (
-    <div className="landing">
-      <div className={` cloud-bg overflow-x-hidden`}>
-        <div>
+    <div className="landing overflow-x-hidden ">
+      <div>
+        <div className="h-screen">
           <Navbar />
           <Banner />
-
-          <div
+        </div>
+        <div className="bg-bgPrimaryDark">
+          {/* <div
             data-aos="fade-up"
             // data-aos-offset="500"
             // data-aos-duration="500"
             data-aos-easing="ease-in-sine"
           >
             <Intro />
-          </div>
+          </div> */}
 
           <Collection />
 
@@ -37,18 +39,18 @@ function Landing() {
             <BerryTokens />
           </div>
           <Roadmap />
+          <NewHeader>asdasdasasd</NewHeader>
           <LearnMore />
           <Community />
         </div>
-        <ScrollUp showUnder={20} easing={"easeOutCubic"} duration={500}>
-          <img
-            src="https://raw.githubusercontent.com/milosjanda/react-scroll-up/gh-pages/img/up_arrow_round.png"
-            alt="Scroll to top"
-            className="invert"
-          />
-        </ScrollUp>
-        ,
       </div>
+      <ScrollUp showUnder={20} easing={"easeOutCubic"} duration={500}>
+        <img
+          src="https://raw.githubusercontent.com/milosjanda/react-scroll-up/gh-pages/img/up_arrow_round.png"
+          alt="Scroll to top"
+          className="invert"
+        />
+      </ScrollUp>
     </div>
   );
 }

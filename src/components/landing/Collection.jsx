@@ -4,25 +4,26 @@ import { funkylandIcon, funkyNinja } from "../../assets/images/images";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
+import SectionHeader from "../common/SectionHeader";
 
 function Collection() {
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
+  // useEffect(() => {
+  //   AOS.init();
+  //   AOS.refresh();
+  // }, []);
   return (
     <>
       <div className="section" id="funkies">
         <div>
-          <h2 className="section-title ">Funkies</h2>
+          <SectionHeader>Funkies</SectionHeader>
           <h4 className="section-subtitle ">Funky Collection</h4>
         </div>
 
         <div
           className="section-div-img mx-8"
-          data-aos="fade-right"
-          // data-aos-offset="400"
-          data-aos-easing="ease-in-sine"
+          // data-aos="fade-right"
+          // // data-aos-offset="400"
+          // data-aos-easing="ease-in-sine"
         >
           <div className="md:w-3/5 text-left">
             <h3 className="section-topic">Bears</h3>
@@ -45,9 +46,9 @@ function Collection() {
 
         <div
           className="section-div-img mx-8"
-          data-aos="fade-left"
-          // data-aos-offset="400"
-          data-aos-easing="ease-in-sine"
+          // data-aos="fade-left"
+          // // data-aos-offset="400"
+          // data-aos-easing="ease-in-sine"
         >
           <div className="section-img m-10 md:w-2/5 md:block hidden">
             <img src={funkyNinja} alt="Intro" />
