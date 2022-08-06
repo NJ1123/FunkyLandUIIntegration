@@ -3,6 +3,7 @@ import btnImg from "./btn-img.png";
 import bullAvatar from "./bull-avatar.png";
 import bullCard from "./bull-card.png";
 import bush from "./bush.png";
+import bg1 from "./bg1.png";
 import blurBg from "./fl-blur-bg.png";
 import blurBg1 from "./fl-blur-bg1.png";
 import communityIconBg from "./communityIconBg.png";
@@ -27,6 +28,7 @@ export {
   bullAvatar,
   bullCard,
   bush,
+  bg1,
   blurBg,
   blurBg1,
   communityIconBg,

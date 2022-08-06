@@ -25,7 +25,7 @@ function Banner() {
               hic veniam consequuntur eligendi?
             </p>
             <div className="text-center md:text-left">
-              <Link to="/app/minting">
+              <Link to="/minting">
                 <button className="banner-btn">Enter Funkyland</button>
               </Link>
             </div>
@@ -37,7 +37,7 @@ function Banner() {
         id="home"
       >
         <img src={bannerImg} alt="" className="my-14" />
-        <Link to="/app/minting">
+        <Link to="/minting">
           <button className="banner-btn flex justify-center">
             Enter Funkyland
           </button>

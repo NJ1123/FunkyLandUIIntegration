@@ -13,4 +13,7 @@
       #4facd4 91.86%
     ); */;
   }
+  .landing-top {
+    background: url("../images/bg1.png");
+  }
 }

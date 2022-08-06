@@ -14,12 +14,13 @@ function Landing() {
   return (
     <div className="landing overflow-x-hidden ">
       <div>
-        <div className="h-screen">
+        <div className="h-screen landing-top">
           <Navbar />
           <Banner />
         </div>
         <Collection />
         {/* TODO add farm mill image */}
+        
         <BerryTokens />
         <Roadmap />
         <LearnMore />

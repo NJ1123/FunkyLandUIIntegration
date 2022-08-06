@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Minting from "./pages/Minting";
 import Farm from "./pages/Farm";
@@ -41,13 +41,41 @@ function App() {
           <SignTransactionsModals className="signTransaction" />
         </DappCoreUIWrapper>
         <Routes>
+          {/* <Route path="/app"> */}
+          <Route path="minting" element={<Minting />} />
+          <Route path="farm" element={<Farm />} />
+          {/* </Route> */}
           <Route path="/" element={<Landing />} />
-          <Route path="/app">
-            <Route path="minting" element={<Minting />} />
-            <Route path="farm" element={<Farm />} />
-          </Route>
         </Routes>
       </DappProvider>
+    </>
+  );
+}
+
+function Home() {
+  return (
+    <>
+      <main>
+        <h2>Welcome to the homepage!</h2>
+        <p>You can do this, I believe in you.</p>
+      </main>
+      <nav>
+        <Link to="/about">About</Link>
+      </nav>
+    </>
+  );
+}
+
+function About() {
+  return (
+    <>
+      <main>
+        <h2>Who are we?</h2>
+        <p>That feels like an existential question, don't you think?</p>
+      </main>
+      <nav>
+        <Link to="/">Home</Link>
+      </nav>
     </>
   );
 }

@@ -1,17 +1,18 @@
 import React from "react";
 import "./index.css";
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 import App from "./App";
 import "./assets/css/dapp.css";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 
- ReactDOM.render(
+ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <App />
-    </BrowserRouter>
-  </React.StrictMode>
-, document.getElementById('root'));
+    </HashRouter>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

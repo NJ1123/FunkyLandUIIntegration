@@ -47,12 +47,12 @@ function Navbar(props) {
           <Link to="/">
             <li className="nav-item">Home</li>
           </Link>
-          <a href="/app/minting">
+          <Link to="/minting">
             <li className="nav-item">Minting</li>
-          </a>
-          <a href="/app/farm">
+          </Link>
+          <Link to="/farm">
             <li className="nav-item">Farm</li>
-          </a>
+          </Link>
           <a href="#berry">
             <li className="nav-item">Farmmill</li>
           </a>
@@ -66,7 +66,7 @@ function Navbar(props) {
           >
             <li className="nav-item">Whitepaper</li>
           </a>
-          {/* <Link to="/app/minting">
+          {/* <Link to="/minting">
             <button className="connect-btn flex justify-center ">
               Connect Wallet
             </button>

@@ -3,21 +3,21 @@
     "chapter": 0,
     "title": "Funkydemic",
     "description": "Funky Land was a land of sunshine and fresh air. It is always sunny and bright. Even the folks that lived there were constantly cheerful.",
-    "link": "http://localhost:3000/app/farm",
+    "link": "http://localhost:3000/farm",
     "image": ""
   },
   {
     "chapter": 1,
     "title": "FarmingEra",
     "description": "The outbreak of the Funky Virus led to the mass fleeing of humans from the FunkyLand. They not only left their land, but they also left 55 Funky eggs behind. From them, a new species of intelligent bulls and bears hatched out.",
-    "link": "http://localhost:3000/app/farm",
+    "link": "http://localhost:3000/farm",
     "image": ""
   },
   {
     "chapter": 2,
     "title": " asd Era",
     "description": "Funky Land was a land of sunshine and fresh air. It is always sunny and bright. Even the folks that lived there were constantly cheerful.",
-    "link": "http://localhost:3000/app/farm",
+    "link": "http://localhost:3000/farm",
     "image": ""
   }
 ]

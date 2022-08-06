@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  funkiesBear,
-  funkiesBull,
-} from "../../assets/images/images";
+import { funkiesBear, funkiesBull } from "../../assets/images/images";
 
 import { Link } from "react-router-dom";
 import SectionHeader from "../common/SectionHeader";
@@ -47,7 +44,7 @@ function Collection() {
             </p>
           </div>
         </div>
-        <Link to="/app/minting">
+        <Link to="/minting">
           <button className="section-btn">Mint Now</button>
         </Link>
       </div>
